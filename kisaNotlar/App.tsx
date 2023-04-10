@@ -1,10 +1,6 @@
 import {
-  FlatList,
-  SafeAreaViewComponent,
   ScrollView,
-  StyleSheet,
   Text,
-  TextInput,
   TouchableOpacity,
   View,
 
@@ -17,8 +13,6 @@ import Header from "./src/components/Header";
 import SearchAndFilter from "./src/components/SearchAndFilter";
 import NotesArea from "./src/components/NotesArea";
 import FilterArea from "./src/components/FilterArea";
-// ! TODO : boş stringleri hiç ekleme ve filtreleme yapma
-// ! TODO : Her component için ayrı bir dosya oluştur
 
 
 export default function App() {
@@ -38,7 +32,7 @@ export default function App() {
   const postListFiltered = taskList.filter((task) =>
     task.toLowerCase().includes(filterWord.toLowerCase())
   );
-  // desc sorted tasklist function
+
   const sortByAscending = () => {
     setTaskList([...taskList].sort((a, b) => (a > b ? 1 : -1)));
     console.log(postListFiltered);

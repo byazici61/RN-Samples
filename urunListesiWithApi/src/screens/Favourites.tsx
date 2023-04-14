@@ -6,11 +6,9 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
-import React, { useState, useMemo, useCallback } from "react";
-
+import React  from "react";
 import { Metrics } from "../../Metrics";
 import { FontAwesome } from "@expo/vector-icons";
-import { all } from "axios";
 import { ProductListProps, Product } from "../component/Types/Type";
 
 const Favourites = (props: ProductListProps) => {
@@ -70,8 +68,8 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     width: Metrics.measure(320),
     height: Metrics.measure(210),
-    borderRadius: 10,
-    marginVertical: 10,
+    borderRadius: Metrics.measure(10),
+    marginVertical: Metrics.measure(10),
     alignItems: "center",
     justifyContent: "center",
     shadowColor: "#000",
@@ -90,30 +88,30 @@ const styles = StyleSheet.create({
     width: Metrics.measure(320),
     height: Metrics.measure(150),
     top: Metrics.measure(-10),
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
-    marginVertical: 10,
+    borderTopLeftRadius: Metrics.measure(10),
+    borderTopRightRadius: Metrics.measure(10),
+    marginVertical: Metrics.measure(10),
     resizeMode: "contain",
   },
   productTitle: {
     position: "absolute",
     top: Metrics.measure(158),
     left: Metrics.measure(10),
-    fontSize: 20,
+    fontSize: Metrics.measure(20),
     fontWeight: "bold",
   },
   brand: {
     position: "absolute",
     top: Metrics.measure(180),
     left: Metrics.measure(10),
-    fontSize: 15,
+    fontSize: Metrics.measure(15),
     fontWeight: "300",
   },
   price: {
     position: "absolute",
-    top: Metrics.measure(165),
+    top: Metrics.measure(155),
     right: Metrics.measure(30),
-    fontSize: 30,
+    fontSize: Metrics.measure(36),
     fontWeight: "bold",
     color: "#3E22EA",
   },
@@ -121,7 +119,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: Metrics.measure(180),
     right: Metrics.measure(10),
-    fontSize: 15,
+    fontSize: Metrics.measure(15),
     fontWeight: "bold",
     color: "#3E22EA",
   },
@@ -131,7 +129,7 @@ const styles = StyleSheet.create({
     right: Metrics.measure(10),
     width: Metrics.measure(30),
     height: Metrics.measure(30),
-    borderRadius: 50,
+    borderRadius: Metrics.measure(15),
 
     backgroundColor: "lightgrey",
     alignItems: "center",

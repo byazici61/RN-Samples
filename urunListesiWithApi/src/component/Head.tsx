@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet } from "react-native";
 import React from "react";
-
+import { Metrics } from "../../Metrics";
 const Head = () => {
   return (
     <View style={styles.headContainer}>
@@ -13,7 +13,7 @@ export default Head;
 const styles = StyleSheet.create({
   headContainer: {
     backgroundColor: "white",
-    height: 80,
+    height: Metrics.measure(80),
     width: "100%",
     alignItems: "center",
     justifyContent: "center",
@@ -21,8 +21,8 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
   },
   headerTxt: {
-    top: 10,
-    fontSize: 25,
-    fontWeight: "400",
+    top: Metrics.measure(10),
+    fontSize: Metrics.measure(25),
+    fontWeight:"bold",
   },
 });

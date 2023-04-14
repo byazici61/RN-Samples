@@ -47,14 +47,20 @@ const styles = StyleSheet.create({
 
     },
     favButtonText: {
-        width: Metrics.measure(40),
-        height: Metrics.measure(40),
-        color: 'red',
+        fontSize: Metrics.measure(25),
+        alignSelf: 'center',
+        color: 'white',
     },
     favButton: {
-        borderColor: 'red',
-        borderWidth: Metrics.measure(10),
-        elevation: 1,
+        position: 'absolute',
+        borderColor: 'white',
+        width: Metrics.measure(40),
+        height: Metrics.measure(40),
+        borderWidth: Metrics.measure(2),
+        right: Metrics.measure(10),
+        top: Metrics.measure(10),
+        borderRadius: Metrics.measure(20),
+        backgroundColor: 'grey',
     },
     pageButtons: {
         flexDirection: 'row',

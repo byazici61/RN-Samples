@@ -2,20 +2,9 @@ import { FlatList, Image, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOp
 import React, { useEffect, useState } from 'react';
 import styles from './src/style/style';
 import PageButtons from './src/companents/PageButtons';
+import RenderItem from './src/companents/RenderItem';
+import Header from './src/companents/Header';
 
-type Product = {
-  id: number;
-  title: string;
-  description: string;
-  price: number;
-  discountPercentage: number;
-  rating: number;
-  stock: number;
-  brand: string;
-  category: string;
-  thumbnail: string;
-  images: string[];
-};
 
 type ProductsData = {
   products: Product[];
@@ -24,11 +13,11 @@ type ProductsData = {
   limit: number;
 };
 
+
 const DATA_URL = 'https://dummyjson.com/products';
-
 const App = () => {
-  const [data, setData] = useState<Product[]>([]);
-
+  const [data, setData] = useState<any>([]);
+  const [pressed, setPressed] = useState<boolean>(false);
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(DATA_URL);
@@ -38,39 +27,14 @@ const App = () => {
     fetchData();
   }, []);
 
-  const renderItem = ({ item }: { item: Product }) => {
-    return (
-      <View>
-        <View style={styles.imageConteiner} >
-          <Image style={styles.image} source={{ uri: item.thumbnail }} />
-          
-          <TouchableOpacity style={styles.favButton}>
-            <Text style={styles.favButtonText}> + </Text>
-          </TouchableOpacity>
-         
-        </View>
-          <View style={styles.itemConteiner}>
-            <View>
-              <Text style={styles.title}>{item.title}</Text>
-              <Text style={styles.brand}>{item.brand}</Text>
-
-            </View>
-
-            <Text style={styles.price}>{item.price} TL</Text>
-          </View>
-        </View>
-      
-    );
-  };
-
   return (
-
-
     <SafeAreaView style={styles.container}>
+      <Header />
       <PageButtons />
       <FlatList
         data={data}
-        renderItem={renderItem}
+         //burda oluşturdğum usetatei renderitema gönderemedim 
+        renderItem={({ item }) => <RenderItem item={item} pressed={pressed} setPressed={setPressed} />}
         keyExtractor={(item) => item.id.toString()}
       />
       {/* <StatusBar style="auto" /> */}

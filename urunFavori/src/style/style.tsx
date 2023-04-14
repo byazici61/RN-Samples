@@ -4,7 +4,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         marginTop: StatusBar.currentHeight || 0,
-        paddingTop: Metrics.measure(10),
+        //paddingTop: Metrics.measure(10),
         backgroundColor: '#C3C3C3'
     },
     itemConteiner: {
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: Metrics.measure(10),
     },
     title: {
-        fontSize: 20,
+        fontSize: Metrics.measure(20),
         fontWeight: 'bold',
     },
     price: {
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         marginLeft: 'auto',
     },
     brand: {
-        fontSize: 16,
+        fontSize: Metrics.measure(16),
     },
 
     image: {
@@ -42,13 +42,15 @@ const styles = StyleSheet.create({
 
     },
     imageConteiner: {
-        elevation: 0,
+       
         alignItems: 'center',
 
     },
     favButtonText: {
         fontSize: Metrics.measure(25),
         alignSelf: 'center',
+        margin: Metrics.measure(2),
+        
         color: 'white',
     },
     favButton: {
@@ -66,6 +68,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         //justifyContent: 'space-between',
         justifyContent: 'center',
+        paddingTop: Metrics.measure(15),
         paddingHorizontal: Metrics.measure(10),
         marginBottom: Metrics.measure(10),
     },
@@ -82,6 +85,19 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         justifyContent: 'center',
         //height: Metrics.measure(30)
+    },
+    appBar: {
+      backgroundColor: "white",
+      width: "100%",
+      height: Metrics.measure(50),
+      justifyContent: "center",
+      alignItems: "center",
+
+    },
+    appBarText: {
+      color: "black",
+      fontSize: Metrics.measure(25),
+      fontWeight: "bold",
     }
 
 });

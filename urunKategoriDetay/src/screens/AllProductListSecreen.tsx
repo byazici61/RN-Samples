@@ -1,11 +1,12 @@
 import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, StyleSheet } from "react-native";
+import { SafeAreaView } from "react-native";
 import Head from '../components/Head'
 import CustomButton from "../components/CustomButton";
 import React, { useState } from "react";
 import AllProduct from "./AllProduct";
 import Favourites from "./Favourites";
 import { Product } from "../components/Types/Type";
+import styles from "../styles/screenStyles/AllProductListScStyle";
 
 export default function App() {
   const [allProducts, setAllProducts] = useState<Product[]>([]);
@@ -63,36 +64,3 @@ export default function App() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#E7EAED",
-    alignItems: "center",
-  },
-  allBtn: {
-    position: "absolute",
-    width: "40%",
-    height: 35,
-    alignItems: "center",
-    justifyContent: "center",
-    borderTopLeftRadius: 9,
-    borderBottomLeftRadius: 9,
-    top: 100,
-    left: 42,
-  },
-  favouriteBtn: {
-    position: "absolute",
-    width: "40%",
-    height: 35,
-    alignItems: "center",
-    justifyContent: "center",
-    borderTopRightRadius: 9,
-    borderBottomRightRadius: 9,
-    top: 100,
-    right: 42,
-  },
-  titleStyle: {
-    fontSize: 15,
-    fontWeight: "400",
-  },
-});

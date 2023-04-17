@@ -51,13 +51,6 @@ const useProducts = (): UseProductsResult => {
           description: product.description,
         }));
 
-        // infoArray.forEach(element => {
-        //   if(!categories.includes(element.category)){
-        //     categories.push(element.category);
-        //   }
-
-        // });
-
         setProductInfo(infoArray);
       } catch (error) {
         console.error(error);

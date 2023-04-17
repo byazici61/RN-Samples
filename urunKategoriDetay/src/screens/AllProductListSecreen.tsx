@@ -1,11 +1,11 @@
 import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
-import Head from './src/components/Head'
-import CustomButton from "./src/components/CustomButton";
+import { SafeAreaView, StyleSheet } from "react-native";
+import Head from '../components/Head'
+import CustomButton from "../components/CustomButton";
 import React, { useState } from "react";
-import AllProduct from "./src/screens/AllProduct";
-import Favourites from "./src/screens/Favourites";
-import { Product } from "./src/components/Types/Type";
+import AllProduct from "./AllProduct";
+import Favourites from "./Favourites";
+import { Product } from "../components/Types/Type";
 
 export default function App() {
   const [allProducts, setAllProducts] = useState<Product[]>([]);

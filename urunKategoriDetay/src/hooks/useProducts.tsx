@@ -8,6 +8,9 @@ type Product = {
   brand: string;
   thumbnail: string;
   category: string;
+  discountPercentage: number;
+  rating: number;
+  description: string;
 };
 
 type UseProductsResult = {
@@ -19,6 +22,9 @@ type UseProductsResult = {
     brand: string;
     thumbnail: string;
     category: string;
+    discountPercentage: number;
+    rating: number;
+    description: string;
   }[];
   categories: string[];
 };
@@ -29,7 +35,7 @@ const useProducts = (): UseProductsResult => {
   const [categories, setCategories] = useState<string[]>([]);
   useEffect(() => {
     const fetchProducts = async () => {
-      
+
       try {
         const response = await axios.get<{ products: Product[] }>('https://dummyjson.com/products');
         setProducts(response.data.products);
@@ -40,30 +46,28 @@ const useProducts = (): UseProductsResult => {
           brand: product.brand,
           thumbnail: product.thumbnail,
           category: product.category,
+          discountPercentage: product.discountPercentage,
+          rating: product.rating,
+          description: product.description,
         }));
-    
-        infoArray.forEach(element => {
-          if(!categories.includes(element.category)){
-            categories.push(element.category);
-          }
-          
-        });
 
-        categories.forEach(element => {
-          console.log(element);});
+        // infoArray.forEach(element => {
+        //   if(!categories.includes(element.category)){
+        //     categories.push(element.category);
+        //   }
+
+        // });
 
         setProductInfo(infoArray);
       } catch (error) {
         console.error(error);
       }
     };
-    
+
     fetchProducts();
   }, []);
 
-  //categories listesini, UseProductsResult ve Product return et
-  return { products, productInfo,categories };
-  
+  return { products, productInfo, categories };
 
 };
 

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
-import { ProductListProps, Product } from "../components/Types/Type";
+import { Product } from "../components/Types/Type";
 import { Metrics } from "../styles/Metrics";
 
 type ProductProps = {

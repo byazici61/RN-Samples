@@ -1,11 +1,13 @@
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
-import TabNavi from './navigations/TabNavi';
+import MainStackNavigator from './navigations/MainStackNavi';
+import React from 'react';
+
 
 export default function App() {
   return (
     <NavigationContainer>
-      <TabNavi />
+      <MainStackNavigator />
     </NavigationContainer>
   );
 }

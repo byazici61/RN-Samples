@@ -22,7 +22,8 @@ const styles = StyleSheet.create({
   },
   headerTxt: {
     top: Metrics.measure(10),
-    fontSize: Metrics.measure(25),
+    fontSize: Metrics.measure(20),
     fontWeight:"bold",
+    color:"#3E22EA"
   },
 });

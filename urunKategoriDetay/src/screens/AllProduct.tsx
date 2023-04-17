@@ -11,11 +11,10 @@ import useProducts from "../hooks/useProducts";
 import { Metrics } from "../styles/Metrics";
 import { FontAwesome } from "@expo/vector-icons";
 import { ProductListProps, Product } from "../components/Types/Type";
-import  Products from "../components/Products";
-
+import { useNavigation } from "@react-navigation/native";
 
 const AllProduct = (props: ProductListProps) => {
-  const { productInfo, products } = useProducts();
+  const { productInfo } = useProducts();
   const { favoriteProducts = [], setFavoriteProducts } = props;
 
   const [allProducts, setAllProducts] = useState<Product[]>(productInfo);
@@ -23,7 +22,6 @@ const AllProduct = (props: ProductListProps) => {
     setAllProducts(productInfo);
   }, [productInfo]);
 
-  //console.log(allProducts);
   const isFavorite = (product: Product) => {
     return favoriteProducts.some((fav) => fav.id === product.id);
   };
@@ -36,9 +34,13 @@ const AllProduct = (props: ProductListProps) => {
     if (setFavoriteProducts) {
       setFavoriteProducts(updatedFavorites);
     }
-    console.log(setFavoriteProducts);
+    //console.log(setFavoriteProducts);
   };
-
+  const navigation = useNavigation();
+  const _onPress_Product = (product: Product) => {
+    console.log(product);
+    navigation.navigate('ProductDetails', { product: product });
+  };
   return (
     <FlatList
       style={styles.flatList}
@@ -46,21 +48,23 @@ const AllProduct = (props: ProductListProps) => {
       data={allProducts}
       renderItem={({ item }) => (
         <View style={styles.productContainer}>
-          <TouchableOpacity
-            style={styles.fav}
-            onPress={() => handleFavoritePress(item)}
-          >
-            <FontAwesome
-              name="heart"
-              size={22}
-              color={isFavorite(item) ? "red" : "white"}
-            />
+          <TouchableOpacity onPress={()=>_onPress_Product(item)}>
+            <TouchableOpacity
+              style={styles.fav}
+              onPress={() => handleFavoritePress(item)}
+            >
+              <FontAwesome
+                name="heart"
+                size={22}
+                color={isFavorite(item) ? "red" : "white"}
+              />
+            </TouchableOpacity>
+            <Image style={styles.image} source={{ uri: item.thumbnail }} />
+            <Text style={styles.productTitle}>{item.title}</Text>
+            <Text style={styles.price}>{item.price}</Text>
+            <Text style={styles.priceTitle}> TL</Text>
+            <Text style={styles.brand}>{item.brand}</Text>
           </TouchableOpacity>
-          <Image style={styles.image} source={{ uri: item.thumbnail }} />
-          <Text style={styles.productTitle}>{item.title}</Text>
-          <Text style={styles.price}>{item.price}</Text>
-          <Text style={styles.priceTitle}> TL</Text>
-          <Text style={styles.brand}>{item.brand}</Text>
         </View>
       )}
       keyExtractor={(item) => item.id.toString()}
@@ -83,8 +87,6 @@ const styles = StyleSheet.create({
     height: Metrics.measure(210),
     borderRadius: Metrics.measure(10),
     marginVertical: Metrics.measure(10),
-    alignItems: "center",
-    justifyContent: "center",
     shadowColor: "#000",
     shadowOffset: {
       width: 0,

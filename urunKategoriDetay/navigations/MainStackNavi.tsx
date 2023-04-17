@@ -4,6 +4,7 @@ import ProductDetailsScreen from '../src/screens/ProductDetailsScreen';
 import CategoryToProduct from '../src/screens/CategoryToProduct';
 import { Product } from '../src/components/Types/Type';
 
+
 export type RootStackParamList = {
     CategoryToProduct: {
         categoryname: string;
@@ -26,6 +27,7 @@ const MainStackNavi = () => {
                 component={TabNavi}
                 options={{
                     headerShown: false,
+
                 }} />
             <MainStack.Screen 
                 name='CategoryToProduct'

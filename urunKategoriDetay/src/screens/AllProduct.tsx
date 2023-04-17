@@ -48,17 +48,18 @@ const AllProduct = (props: ProductListProps) => {
       data={allProducts}
       renderItem={({ item }) => (
         <View style={styles.productContainer}>
-          <TouchableOpacity onPress={()=>_onPress_Product(item)}>
-            <TouchableOpacity
-              style={styles.fav}
-              onPress={() => handleFavoritePress(item)}
-            >
-              <FontAwesome
-                name="heart"
-                size={22}
-                color={isFavorite(item) ? "red" : "white"}
-              /> 
-             </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.fav}
+            onPress={() => handleFavoritePress(item)}
+          >
+            <FontAwesome
+              name="heart"
+              size={22}
+              color={isFavorite(item) ? "red" : "white"}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => _onPress_Product(item)}>
+
             <Image style={styles.image} source={{ uri: item.thumbnail }} />
             <Text style={styles.productTitle}>{item.title}</Text>
             <Text style={styles.price}>{item.price}</Text>

@@ -9,8 +9,11 @@ import {
   FlatList,
   StyleSheet,
   Image,
+  Touchable,
+  TouchableOpacity,
 } from "react-native";
 import { Metrics } from "../styles/Metrics";
+import { useNavigation } from "@react-navigation/native";
 
 const CategoryToProduct = (props: StackScreenProps<RootStackParamList, 'CategoryToProduct'>) => {
   const { productInfo } = useProducts();
@@ -18,7 +21,7 @@ const CategoryToProduct = (props: StackScreenProps<RootStackParamList, 'Category
   useEffect(() => {
     setAllProducts(productInfo);
   }, [productInfo]);
-
+  const navigation = useNavigation();
   const category = props.route.params.categoryname;
  
   return (
@@ -28,6 +31,7 @@ const CategoryToProduct = (props: StackScreenProps<RootStackParamList, 'Category
       data={allProducts.filter((item) => item.category === category)}
       renderItem={({ item }) => {
           return (
+            <TouchableOpacity onPress={()=>navigation.navigate('ProductDetails', { product: item })}>
             <View style={styles.productContainer}>
               <Image style={styles.image} source={{ uri: item.thumbnail }} />
               <Text style={styles.productTitle}>{item.title}</Text>
@@ -35,6 +39,7 @@ const CategoryToProduct = (props: StackScreenProps<RootStackParamList, 'Category
               <Text style={styles.priceTitle}> TL</Text>
               <Text style={styles.brand}>{item.brand}</Text>
             </View>
+            </TouchableOpacity>
           );
         } 
         }

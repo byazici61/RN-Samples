@@ -1,9 +1,9 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import TabNavi from './TabNavi';
-import ProductDetailsScreen from '../src/screens/ProductDetailsScreen';
-import CategoryToProduct from '../src/screens/CategoryToProduct';
-import { Product } from '../src/components/Types/Type';
-import { Metrics } from '../src/styles/Metrics';
+import ProductDetailsScreen from '../screens/ProductDetailsScreen';
+import CategoryToProduct from '../screens/CategoryToProduct';
+import { Product } from '../components/Types/Type';
+import { Metrics } from '../styles/Metrics';
 
 export type RootStackParamList = {
     CategoryToProduct: {

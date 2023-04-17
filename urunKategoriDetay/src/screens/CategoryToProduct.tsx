@@ -1,5 +1,5 @@
 import { StackScreenProps } from "@react-navigation/stack"
-import { RootStackParamList } from "../../navigations/MainStackNavi"
+import { RootStackParamList } from "../navigations/MainStackNavi"
 import useProducts from "../hooks/useProducts";
 import { useEffect, useState } from "react";
 import { Product } from "../components/Types/Type";

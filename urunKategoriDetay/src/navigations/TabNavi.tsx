@@ -1,9 +1,9 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import UrunList from '../src/screens/AllProductListSecreen';
+import UrunList from '../screens/AllProductListSecreen';
 import React from 'react';
-import CategoryList from '../src/screens/CategoryListScreen';
+import CategoryList from '../screens/CategoryListScreen';
 import { MaterialIcons, FontAwesome } from '@expo/vector-icons';
-import { Metrics } from '../src/styles/Metrics';
+import { Metrics } from '../styles/Metrics';
 
 const Tab = createBottomTabNavigator();
 

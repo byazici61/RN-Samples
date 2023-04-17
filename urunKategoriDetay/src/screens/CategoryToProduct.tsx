@@ -25,11 +25,8 @@ const CategoryToProduct = (props: StackScreenProps<RootStackParamList, 'Category
     <FlatList
       style={styles.flatList}
       showsVerticalScrollIndicator={false}
-      data={allProducts}
+      data={allProducts.filter((item) => item.category === category)}
       renderItem={({ item }) => {
-
-        if (item.category === category) {
-          console.log(item.category);
           return (
             <View style={styles.productContainer}>
               <Image style={styles.image} source={{ uri: item.thumbnail }} />
@@ -40,10 +37,8 @@ const CategoryToProduct = (props: StackScreenProps<RootStackParamList, 'Category
             </View>
           );
         } 
-        else{
-          return (  <View></View>);
         }
-      }}
+      
       keyExtractor={(item) => item.id.toString()}
     />
   );

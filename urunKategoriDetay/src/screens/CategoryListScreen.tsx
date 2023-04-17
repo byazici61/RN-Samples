@@ -44,7 +44,7 @@ const CategoryList = () => {
                     </View>
                 )
                 }
-                keyExtractor={(item) => item.toString()}
+                keyExtractor={(item) => item}
             />
 
         </View>

@@ -3,18 +3,18 @@ import { RootStackParamList } from "../../navigations/MainStackNavi";
 import { View, Text, Image, StyleSheet } from "react-native";
 import { Metrics } from "../styles/Metrics";
 import { TouchableOpacity } from "react-native-gesture-handler";
-let ratingWidth:number
+let ratingWidth: number
 const ProductDetailsScreen = (props: StackScreenProps<RootStackParamList, 'ProductDetails'>) => {
     const product = props.route.params.product;
-     ratingWidth = (product.rating / 5) * 100;
+    ratingWidth = (product.rating / 5) * 100;
     return (
         <View style={styles.productConteiner}>
             <Image style={styles.image} source={{ uri: product.thumbnail }} />
             <Text style={styles.productTitle}>{product.title}</Text>
             <View style={styles.mainRatingBar}>
-            <View style={[styles.ratingBar,{width:ratingWidth}]}>
-                <Text style={styles.ratingText}>{product.rating}</Text>
-            </View>
+                <View style={[styles.ratingBar, { width: ratingWidth }]}>
+                    <Text style={styles.ratingText}>{product.rating}</Text>
+                </View>
             </View>
             <Text style={styles.brand}>{product.brand}</Text>
             <View style={styles.priceConteiner}>
@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
         position: "absolute",
         top: Metrics.measure(158),
         right: Metrics.measure(10),
-        width: Metrics.measure(80),
+        width: Metrics.measure(90),
         height: Metrics.measure(30),
         borderRadius: Metrics.measure(3),
         backgroundColor: '#B6AEE2',

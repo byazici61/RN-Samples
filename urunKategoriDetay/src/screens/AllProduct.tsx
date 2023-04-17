@@ -57,8 +57,8 @@ const AllProduct = (props: ProductListProps) => {
                 name="heart"
                 size={22}
                 color={isFavorite(item) ? "red" : "white"}
-              />
-            </TouchableOpacity>
+              /> 
+             </TouchableOpacity>
             <Image style={styles.image} source={{ uri: item.thumbnail }} />
             <Text style={styles.productTitle}>{item.title}</Text>
             <Text style={styles.price}>{item.price}</Text>

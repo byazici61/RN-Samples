@@ -18,7 +18,7 @@ const TabNavi = () => {
             <MaterialIcons name="category" size={Metrics.measure(22)} color={"#3E22EA"} />
           ),
           title: 'Kategoriler',
-          tabBarLabelStyle: { fontSize: Metrics.measure(20) },
+          tabBarLabelStyle: { fontSize: Metrics.measure(17) },
         }}
       />
       <Tab.Screen
@@ -26,10 +26,10 @@ const TabNavi = () => {
         component={UrunList}
         options={{
           tabBarIcon: () => (
-            <FontAwesome name="shopping-cart" size={Metrics.measure(24)} color="#3E22EA" />
+            <FontAwesome name="shopping-cart" size={Metrics.measure(22)} color="#3E22EA" />
           ),
           title: 'Tüm Ürünler',
-          tabBarLabelStyle: { fontSize: Metrics.measure(20) },
+          tabBarLabelStyle: { fontSize: Metrics.measure(17) },
         }} />
     </Tab.Navigator>
   );

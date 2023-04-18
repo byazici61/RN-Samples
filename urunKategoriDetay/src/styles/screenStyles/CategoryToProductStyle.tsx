@@ -15,15 +15,15 @@ const styles = StyleSheet.create({
         height: Metrics.measure(210),
         borderRadius: Metrics.measure(10),
         marginVertical: Metrics.measure(10),
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.23,
-        shadowRadius: 2.62,
+        // shadowColor: "#000",
+        // shadowOffset: {
+        //     width: 0,
+        //     height: 2,
+        // },
+        // shadowOpacity: 0.23,
+        // shadowRadius: 2.62,
 
-        elevation: 4,
+        // elevation: 4,
     },
     image: {
         position: "absolute",
@@ -73,7 +73,6 @@ const styles = StyleSheet.create({
         width: Metrics.measure(30),
         height: Metrics.measure(30),
         borderRadius: Metrics.measure(50),
-
         backgroundColor: "lightgrey",
         alignItems: "center",
         zIndex: 1,

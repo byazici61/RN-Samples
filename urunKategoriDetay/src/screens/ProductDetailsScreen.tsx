@@ -1,7 +1,6 @@
 import { StackScreenProps } from "@react-navigation/stack";
 import { RootStackParamList } from "../navigations/MainStackNavi";
-import { View, Text, Image } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { View, Text, Image,TouchableOpacity } from "react-native";
 import styles from "../styles/screenStyles/ProductDetailsScStyle";
 const ProductDetailsScreen = (props: StackScreenProps<RootStackParamList, 'ProductDetails'>) => {
     const product = props.route.params.product;

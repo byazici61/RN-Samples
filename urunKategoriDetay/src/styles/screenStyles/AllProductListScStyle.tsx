@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: "#E7EAED",
         alignItems: "center",
-        
+
     },
     allBtn: {
         position: "absolute",

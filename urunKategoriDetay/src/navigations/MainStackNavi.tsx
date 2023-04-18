@@ -34,7 +34,7 @@ const MainStackNavi = () => {
                 options={{title: 'Ürünler',headerTitleAlign: 'center',headerTitleStyle: {fontSize: Metrics.measure(20),color: "#3E22EA",fontWeight: "bold",}}}
                 component={CategoryToProduct} />
             <MainStack.Screen
-                name='ProductDetails'//Buraları değiştirince hata veriyor hocaya sor "Ürün detayları" yazamıyorum
+                name='ProductDetails'
                 options={{title: 'Ürün Detayları',headerTitleAlign: 'center',headerTitleStyle: {fontSize: Metrics.measure(20),color: "#3E22EA",fontWeight: "bold"}}}
                 component={ProductDetailsScreen}
             />

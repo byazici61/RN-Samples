@@ -130,6 +130,18 @@ const styles = StyleSheet.create({
         borderRadius: Metrics.measure(3),
         backgroundColor: '#B6AEE2',
 
-    }
-});
+    },
+    quantityConteiner: {
+        backgroundColor: "grey",
+        height: 50,
+        position: "absolute",
+        bottom: 150,
+        width: "100%",
+        flexDirection: "row",
+        justifyContent: "space-around",
+        alignItems: "center"
+    },
+}
+
+    );
 export default styles;

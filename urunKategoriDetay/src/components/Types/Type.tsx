@@ -15,3 +15,7 @@ export type ProductListProps = {
   setFavoriteProducts?: React.Dispatch<React.SetStateAction<Product[]>>;
   setAllProducts?: React.Dispatch<React.SetStateAction<Product[]>>;
 };
+export type CartProduct={
+  product:Product;
+  quantity:number;
+}

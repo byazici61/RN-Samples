@@ -4,12 +4,13 @@ import React from 'react';
 import CategoryList from '../screens/CategoryListScreen';
 import { MaterialIcons, FontAwesome } from '@expo/vector-icons';
 import { Metrics } from '../styles/Metrics';
+import CartScreen from '../screens/CartScreen';
 
 const Tab = createBottomTabNavigator();
 
 const TabNavi = () => {
   return (
-    <Tab.Navigator screenOptions={{ headerShown: false ,headerStyle:{borderColor: "#A7A7A7",borderWidth:1}}}>
+    <Tab.Navigator screenOptions={{ headerShown: false, headerStyle: { borderColor: "#A7A7A7", borderWidth: 1 } }}>
       <Tab.Screen
         name='Kategoriler'
         component={CategoryList}
@@ -31,6 +32,14 @@ const TabNavi = () => {
           title: 'Tüm Ürünler',
           tabBarLabelStyle: { fontSize: Metrics.measure(17) },
         }} />
+      <Tab.Screen
+        name="Sepetim"
+        component={CartScreen}
+        options={{
+          title: 'Sepet',
+          tabBarLabelStyle: { fontSize: Metrics.measure(17) }
+        }}
+      />
     </Tab.Navigator>
   );
 };
